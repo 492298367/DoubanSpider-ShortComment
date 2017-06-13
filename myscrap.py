@@ -6,9 +6,6 @@ import re
 from urllib import quote
 import time
 import sys
-from pandas import Series,DataFrame
-import pandas as pd 
-import numpy as np
 import xlwt
 
 reload(sys)
