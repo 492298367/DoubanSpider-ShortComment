@@ -3,7 +3,6 @@ import urllib2
 import requests
 from bs4 import BeautifulSoup
 import re
-from urllib import quote
 import time
 import sys
 import xlwt
@@ -139,7 +138,7 @@ def commentPage(index,blocks,wb,ws):
 	soup = BeautifulSoup(Timetag[0],"html.parser")
 	time_result.append(soup.get_text().strip())
 
-    #评价等级
+    	#评价等级
 	rates = re.findall('<span class=".*?rating" title=(.*?)></span>',blocks)
 	if len(rates) == 0:
 		rates = 'NA'
@@ -147,7 +146,7 @@ def commentPage(index,blocks,wb,ws):
 	rates_result.append(soup.get_text())
 
 
-    #支持数量
+   	#支持数量
 	votes = re.findall('<span class="votes">(.*?)</span>',blocks)
 	soup = BeautifulSoup(votes[0],"html.parser")
 	votes_result.append(soup.get_text())
